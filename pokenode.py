@@ -1,21 +1,15 @@
-class PokeNode:
+cclass PokeNode:
 
     def __init__(self, numero, name, type1,	type2, total, HP, attack, defense, sp_atk,	sp_def, speed, generation, legendary):
 
-        self.__numero = numero
+        #
+        self.__next = None
         self.__data = name
+        #
+        self.__numero = numero
         self.__type1 = type1
         self.__type2 = type2
-        self.__total = total
-        self.__HP = HP
-        self.__attack = attack
-        self.__defense = defense
-        self.__sp_atk = sp_atk
-        self.__sp_def = sp_def
-        self.__speed = speed
-        self.__generation = generation
-        self.__legendary = legendary
-        self.__next = None
+
 
     def get_data(self):
 

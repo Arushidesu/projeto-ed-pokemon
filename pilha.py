@@ -12,12 +12,12 @@ class Stack:
 
         return self.__head == None
     
-    def push(self, item):
+    def push(self, *item):
         
         '''Adiciona itens no índice 0'''
 
         current = self.__head
-        temp = PokeNode(item)
+        temp = PokeNode(*item)
 
         #A pilha está vazia
         if self.is_empty():
@@ -26,19 +26,25 @@ class Stack:
             temp.set_next(current)
             self.__head = temp
 
-    # def pop(self):
+    def pop(self):
         
-    # def peek(self):
+        '''Remove, se houver, o índice 0'''
+
+
+    def peek(self):
     
+        '''Mostra, se houver, o índice 0'''
+
     #Dá erro se não existem elementos na pilha
 
-    # def size(self):
+    def size(self):
 
+        '''Diz quantos elementos a pilha possui'''
 
     def __str__(self):
         
         
-        #Exemplo: < 4, ... [+ 5] <
+        #Exemplo: < Bulbasauro, ... [+ 149] <
 
         current = self.__head
         pilha_string = "< "

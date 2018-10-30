@@ -14,4 +14,3 @@ with open("pokemon.csv", "r+") as pokelista:
         pokedex.append(*pokemon.split(","))
 
 print(pokedex)
-
