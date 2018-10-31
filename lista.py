@@ -132,22 +132,37 @@ class List:
                 temp.set_next(current)
                 previous.set_next(temp)
     
-    #TODO
-    # def pop(self, pos = None):
+    def pop(self, pos=None):
         
-    #     '''Remove o último item da lista.
-    #     Pode receber um índice específico.'''
+        '''Remove o último item da lista.
+        Pode receber um índice específico.'''
 
-    #     current = self.__head
-    #     previous = None
-    #     popped = None
+        current = self.__head
+        previous = None
+        popped = None
 
-    #     try:
-    #         
-    #     except:
-    #         return "A lista está vazia"
+        #Lista vazia
+        if self.is_empty() or self.size < pos:
+            return False
 
-    #     return popped
+        if pos == None:
+            while current.get_next() != None:
+                previous, current = current, current.get_next()
+            popped = current.get_data()
+            previous.set_next(current.get_next())
+
+        if pos == 0:
+            popped = current.get_data()
+            self.__head = current.get_next()
+
+        count = 0
+        while count != pos:
+                previous, current = current, current.get_next()
+                count += 1
+            popped = current.get_data()
+            previous.set_next(current.get_next())
+
+        return popped
     
     def __str__(self):
         
